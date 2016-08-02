@@ -4,30 +4,34 @@ import java.text.DecimalFormat;
 
 public class Circle {
 
-	public double radius;
+	private double radius;
 
-	private double getCircumference(double input) {
-		double circumference = 2 * (Math.PI) * input;
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+
+	private double getCircumference() {
+		double circumference = 2 * (Math.PI) * radius;
 
 		return circumference;
 	}
 
-	public String getCircumferenceFormat(double input) {
+	public String getCircumferenceFormat() {
 		DecimalFormat df = new DecimalFormat("#.000");
-		String formattedCircumference = df.format(getCircumference(input));
+		String formattedCircumference = df.format(getCircumference());
 
 		return formattedCircumference;
 	}
 
-	private double getArea(double input) {
-		double area = (Math.PI) * input * input;
+	private double getArea() {
+		double area = (Math.PI) * radius * radius;
 
 		return area;
 	}
 
-	public String getFormattedArea(double input) {
+	public String getFormattedArea() {
 		DecimalFormat df = new DecimalFormat("#.000");
-		String formattedArea = df.format(getArea(input));
+		String formattedArea = df.format(getArea());
 
 		return formattedArea;
 	}
